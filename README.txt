@@ -14,14 +14,11 @@ git clone https://github.com/angelaEST/psp2.git
 
 Heroku
 
-
-
-Para ejecutar con resultados por consola:
-
+heroku git:clone -a pspdoscero
 
 Ejecución Heroku
 
-
+https://pspdoscero.herokuapp.com/
 
 
 
