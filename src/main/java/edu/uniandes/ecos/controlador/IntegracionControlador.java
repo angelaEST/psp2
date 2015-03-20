@@ -64,13 +64,17 @@ public class IntegracionControlador extends HttpServlet {
         String x = req.getParameter("valx");
         String numSeg = req.getParameter("segmento");
         String dof = req.getParameter("dof");
-        integracion.setDof(Double.valueOf(dof));
-        integracion.setNumSeg(Integer.valueOf(numSeg));
-        integracion.setValX(Double.valueOf(x));
+        try {
+            integracion.setDof(Double.valueOf(dof));
+            integracion.setNumSeg(Integer.valueOf(numSeg));
+            integracion.setValX(Double.valueOf(x));
 
-        double resultadoIntegracion = calculo.cargarIntegracionNumerica(integracion);
+            double resultadoIntegracion = calculo.cargarIntegracionNumerica(integracion);
 
-        PaintingWeb.showResults(req, resp, resultadoIntegracion);
-
+            PaintingWeb.showResults(req, resp, resultadoIntegracion,false);
+        } catch (NumberFormatException exception) {
+            System.err.println("Utilice punto(.) como separador de decimales");
+            PaintingWeb.showResults(req, resp, 0d,true);
+        }
     }
 }

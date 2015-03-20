@@ -7,10 +7,10 @@ Efectua integración numérica con uso de la regla de simpson
 
 
 HTTPS clone URL GITHUB:
-
+https://github.com/angelaEST/psp2.git
 
 Command clone psp2.1
-
+git clone https://github.com/angelaEST/psp2.git
 
 Heroku
 
